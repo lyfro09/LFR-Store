@@ -20,7 +20,9 @@ import { Router } from './router.js';
 import { Outbox } from './modules/outbox.js';
 import { VoiceKeeper } from './modules/voice.js';
 import { auditActor } from './modules/audit-actor.js';
-for(const k of ['DISCORD_TOKEN','GUILD_ID'])if(!process.env[k])throw new Error('Заполните '+k+' в .env.');
+const discordToken=process.env.DISCORD_TOKEN?.trim()||process.env.BOT_TOKEN?.trim();
+if(!discordToken)throw new Error('Заполните DISCORD_TOKEN или системную BOT_TOKEN.');
+if(!process.env.GUILD_ID)throw new Error('Заполните GUILD_ID.');
 let config=loadConfig();
 const database=resolve(process.env.DATABASE_PATH||'data/shop.sqlite'),lockPath=resolve(process.env.LOCK_PATH||database+'.lock');mkdirSync(dirname(database),{recursive:true});mkdirSync(dirname(lockPath),{recursive:true});
 try{const fd=openSync(lockPath,'wx',0o600);writeFileSync(fd,String(process.pid));closeSync(fd);}catch(e){
@@ -80,4 +82,4 @@ client.once(Events.ClientReady,async()=>{
 function shutdown(){if(stopping)return;stopping=true;if(timer)clearInterval(timer);voice.stop();client.destroy();db.close();try{unlinkSync(lockPath);}catch{}process.exit(0);}
 process.on('SIGINT',shutdown);process.on('SIGTERM',shutdown);
 process.on('exit',()=>{try{if(readFileSync(lockPath,'utf8')===String(process.pid))unlinkSync(lockPath);}catch{}});
-await client.login(process.env.DISCORD_TOKEN);
+await client.login(discordToken);
