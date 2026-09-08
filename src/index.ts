@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { AuditLogEvent,Client,Events,GatewayIntentBits,Partials, type Guild } from 'discord.js';
+import { ActivityType,AuditLogEvent,Client,Events,GatewayIntentBits,Partials, type Guild } from 'discord.js';
 import { openSync,closeSync,readFileSync,unlinkSync,writeFileSync,mkdirSync } from 'node:fs';
 import { resolve,dirname } from 'node:path';
 import { loadConfig } from './core/config.js';
@@ -34,7 +34,7 @@ const db=new Store(database),catalog=new Catalog(db);catalog.seed();updateDiscor
 const tickets=new Tickets(db,getConfig,orders,logs),panels=new Panels(db,getConfig),giveaways=new Giveaways(db,logs),reviews=new Reviews(db),ranks=new Ranks(db,getConfig),stats=new Statistics(db,getConfig,reviews,logs);
 const router=new Router(db,getConfig,()=>{const next=loadConfig();for(const key of panels.keys())buildPanel(key,next,db);config=next;db.set('configSnapshot',config);},catalog,orders,tickets,panels,giveaways,reviews,ranks,logs);
 const setup=new Setup(db,getConfig,panels,g=>stats.update(g,true));db.set('configSnapshot',config);
-const client=new Client({intents:[GatewayIntentBits.Guilds,GatewayIntentBits.GuildMembers,GatewayIntentBits.GuildVoiceStates,GatewayIntentBits.GuildMessages,GatewayIntentBits.MessageContent,GatewayIntentBits.DirectMessages],partials:[Partials.Channel,Partials.Message],allowedMentions:noMentions});
+const client=new Client({intents:[GatewayIntentBits.Guilds,GatewayIntentBits.GuildMembers,GatewayIntentBits.GuildVoiceStates,GatewayIntentBits.GuildMessages,GatewayIntentBits.MessageContent,GatewayIntentBits.DirectMessages],partials:[Partials.Channel,Partials.Message],allowedMentions:noMentions,presence:{status:'online',activities:[{name:'Custom Status',state:'🛒LFR Store',type:ActivityType.Custom}]}});
 let stopping=false;
 const outbox=new Outbox(db);
 const voice=new VoiceKeeper(e=>logs.error(e,'voice'));
