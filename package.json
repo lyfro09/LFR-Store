@@ -1,0 +1,32 @@
+{
+  "name": "lfr-store-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "register": "tsx src/register.ts",
+    "check": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "validate": "tsx scripts/validate.ts",
+    "deploy:check": "npm run check && npm test && npm run validate && npm run build",
+    "catalog:import": "tsx scripts/catalog.ts import",
+    "catalog:export": "tsx scripts/catalog.ts export"
+  },
+  "dependencies": {
+    "@discordjs/voice": "^0.19.2",
+    "discord.js": "14.27.0",
+    "dotenv": "17.2.3",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  }
+}

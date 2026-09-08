@@ -1,0 +1,169 @@
+{
+  "categories": [
+    {
+      "id": "genshin",
+      "name": "Genshin Impact",
+      "description": "Товары внутри Genshin Impact",
+      "emoji": "🌠",
+      "position": 0,
+      "enabled": true
+    },
+    {
+      "id": "telegram",
+      "name": "Telegram",
+      "description": "Товары внутри Telegram",
+      "emoji": "✈️",
+      "position": 1,
+      "enabled": true
+    },
+    {
+      "id": "discord",
+      "name": "Discord",
+      "description": "Товары внутри Discord",
+      "emoji": "💎",
+      "position": 2,
+      "enabled": true
+    },
+    {
+      "id": "honkai",
+      "name": "Honkai Star Rail",
+      "description": "Товары внутри Honkai Star Rail",
+      "emoji": "🚂",
+      "position": 3,
+      "enabled": true
+    },
+    {
+      "id": "zenless",
+      "name": "Zenless Zone Zero",
+      "description": "Товары внутри Zenless Zone Zero",
+      "emoji": "⚡",
+      "position": 4,
+      "enabled": true
+    }
+  ],
+  "products": [
+    {
+      "id": "nitro",
+      "name": "Discord Nitro",
+      "description": "Выберите тип Nitro, затем способ получения.",
+      "category": "discord",
+      "image": "",
+      "variants": [
+        {
+          "id": "full-login",
+          "name": "Входом",
+          "group": "full",
+          "price": null,
+          "available": false
+        },
+        {
+          "id": "full-gift",
+          "name": "Гифтом",
+          "group": "full",
+          "price": null,
+          "available": false
+        },
+        {
+          "id": "basic-login",
+          "name": "Входом",
+          "group": "basic",
+          "price": null,
+          "available": false
+        },
+        {
+          "id": "basic-gift",
+          "name": "Гифтом",
+          "group": "basic",
+          "price": null,
+          "available": false
+        }
+      ],
+      "price": null,
+      "currency": "RUB",
+      "available": false,
+      "delivery": "subscriptions",
+      "terms": "",
+      "enabled": true,
+      "variantGroups": [
+        {
+          "id": "full",
+          "name": "Full"
+        },
+        {
+          "id": "basic",
+          "name": "Basic"
+        }
+      ]
+    },
+    {
+      "id": "decoration",
+      "name": "Украшения профиля",
+      "description": "Выберите номинал украшения. Цена продажи магазина указывается отдельно.",
+      "category": "discord",
+      "image": "",
+      "variants": [
+        {
+          "id": "usd-4-99",
+          "name": "Украшение за 4.99$",
+          "price": null,
+          "available": false
+        },
+        {
+          "id": "usd-8-99",
+          "name": "Украшение за 8.99$",
+          "price": null,
+          "available": false
+        },
+        {
+          "id": "usd-9-99",
+          "name": "Украшение за 9.99$",
+          "price": null,
+          "available": false
+        },
+        {
+          "id": "usd-15-99",
+          "name": "Украшение за 15.99$",
+          "price": null,
+          "available": false
+        },
+        {
+          "id": "usd-17-99",
+          "name": "Украшение за 17.99$",
+          "price": null,
+          "available": false
+        },
+        {
+          "id": "usd-21-98",
+          "name": "Украшение за 21.98$",
+          "price": null,
+          "available": false
+        },
+        {
+          "id": "usd-22-99",
+          "name": "Украшение за 22.99$",
+          "price": null,
+          "available": false
+        },
+        {
+          "id": "usd-25-99",
+          "name": "Украшение за 25.99$",
+          "price": null,
+          "available": false
+        },
+        {
+          "id": "usd-26-97",
+          "name": "Украшение за 26.97$",
+          "price": null,
+          "available": false
+        }
+      ],
+      "price": null,
+      "currency": "RUB",
+      "available": false,
+      "delivery": "usual",
+      "terms": "",
+      "enabled": true,
+      "variantGroups": []
+    }
+  ]
+}

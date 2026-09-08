@@ -1,0 +1,14 @@
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    init: true
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      DATABASE_PATH: /app/data/shop.sqlite
+      CONFIG_PATH: /app/config/shop.json
+      LOCK_PATH: /tmp/lfr-store-bot.lock
+    volumes:
+      - ./data:/app/data

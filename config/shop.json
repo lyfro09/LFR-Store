@@ -1,0 +1,429 @@
+{
+  "SHOP_NAME": "LFR STORE",
+  "DISCORD_URL": "https://discord.gg/3fcDW5Vjfm",
+  "TELEGRAM_URL": "https://t.me/lyfroo",
+  "PARTNERSHIP_CONTACT": "<@689455809612349463>",
+  "START_YEAR": "2021",
+  "appearance": {
+    "accent": "#793CFF",
+    "banners": {
+      "information": "assets/welcome.png",
+      "rules": "assets/rules.png",
+      "tickets": "assets/tickets.png",
+      "products": "assets/products.png"
+    }
+  },
+  "delivery": {
+    "usual": "5–15 минут после подтверждения оплаты",
+    "subscriptions": "до 12 часов после подтверждения оплаты",
+    "delay": "Если потребуется больше времени, продавец сообщит об этом и согласует срок.",
+    "guarantee": "весь срок его действия",
+    "video": "Для подтверждения возможной проблемы сохраняйте видеозапись получения и активации товара.",
+    "refund": "Возврат средств отсутствует.",
+    "penalty": "За нарушение правил магазина или попытку обмана — блокировка без возврата средств."
+  },
+  "paymentInstructions": "Способ оплаты согласует продавец",
+  "tickets": {
+    "activePerType": 1,
+    "cooldownSeconds": 60,
+    "sessionMinutes": 30
+  },
+  "statistics": {
+    "includeBots": false,
+    "intervalMinutes": 10
+  },
+  "ranks": {
+    "currency": "RUB",
+    "thresholds": {}
+  },
+  "bindings": {},
+  "roles": {
+    "admin": {
+      "name": "Admin",
+      "color": 0
+    },
+    "seller": {
+      "name": "Seller",
+      "color": 9000959
+    },
+    "developer": {
+      "name": "Developer",
+      "color": 6454271
+    },
+    "manager": {
+      "name": "Manager",
+      "color": 5160396
+    },
+    "sponsor": {
+      "name": "Sponsor",
+      "color": 14645487
+    },
+    "partner": {
+      "name": "Partner",
+      "color": 10192875
+    },
+    "diamond": {
+      "name": "Diamond",
+      "color": 8445951
+    },
+    "golden": {
+      "name": "Golden",
+      "color": 16240496
+    },
+    "bronze": {
+      "name": "Bronze",
+      "color": 13472864
+    },
+    "member": {
+      "name": "Участник",
+      "color": 11052729
+    }
+  },
+  "information": {
+    "welcome": "# 🛍️ Добро пожаловать в {SHOP_NAME}\n\nРады видеть вас в нашем магазине! У нас можно купить Discord Nitro, украшения профиля, донат в игры и подписки на сервисы по выгодным ценам и с быстрой выдачей.",
+    "order": "## 💸 Как сделать заказ\n\n1. Выберите товар в прайс-листе — {PRODUCTS_CHANNEL}.\n2. Создайте тикет — {TICKETS_CHANNEL}.\n3. Дождитесь продавца и оплатите удобным способом.\n4. Получите товар — подарок, ключ, активацию или пополнение, в зависимости от выбранной позиции.\n\nОбычно выдача занимает **{USUAL_DELIVERY}**. Для Nitro и подписок действует отдельный срок, указанный ниже.",
+    "guarantees": "## ✅ Гарантии и выдача\n\n🛡️ Гарантия на товар — **{GUARANTEE}**.\n👤 Товар выдают продавцы с ролью {SELLER_ROLE} или администрация магазина.\n⏱️ Nitro и подписки — **{SUBSCRIPTIONS_DELIVERY}**. {DELAY}\n⚠️ {VIDEO}",
+    "safety": "## 📋 Безопасность и правила\n\n🔒 Не передавайте свои данные третьим лицам.\n🔑 Мы не запрашиваем пароли, Discord-токены и коды входа.\n💳 {REFUND}\n🚫 {PENALTY}\n\nПравила магазина — {RULES_CHANNEL}.",
+    "contactsTitle": "## 📞 Контакты и поддержка",
+    "seller": "🛒 По вопросам покупок — {SELLER_ROLE}.",
+    "partnership": "🤝 По сотрудничеству и оптовым закупкам — {PARTNERSHIP_CONTACT}.",
+    "discord": "💬 Discord — {DISCORD_URL}.",
+    "telegram": "✈️ Резервный канал в Telegram — {TELEGRAM_URL}.",
+    "why": "## 💎 Почему {SHOP_NAME}\n\n✅ Низкие цены.\n✅ Быстрая выдача.\n✅ Гарантия на {GUARANTEE}.\n✅ Честные продавцы.",
+    "year": "✅ Работаем с {START_YEAR} года.",
+    "support": "✅ Поддержка на всех этапах покупки.",
+    "thanks": "🔥 Спасибо, что выбираете **{SHOP_NAME}** — приятных покупок!"
+  },
+  "rules": {
+    "title": "# 📜 Правила сервера",
+    "intro": "Обязательны к соблюдению всеми участниками — заходя на сервер, вы с ними согласны.",
+    "itemTitle": "### 📌 Правило — {NUMBER}",
+    "items": [
+      "Незнание правил не освобождает вас от ответственности.",
+      "Запрещено выкладывать шок-контент и контент сексуального характера.",
+      "Запрещена реклама сторонних Discord-серверов, каналов и проектов.",
+      "Запрещено неадекватное и оскорбительное поведение по отношению к участникам сервера.",
+      "Запрещено распространение личной информации участников — доксинг и деанон.",
+      "Спам и флуд сообщениями карается блокировкой чата или блокировкой на сервере.",
+      "Если администрация считает, что ваши действия могут навредить серверу или его участникам, она вправе вынести наказание по своему усмотрению.",
+      "**Выдача и гарантии**\nОбычное время выдачи: {USUAL_DELIVERY}.\nNitro и подписки — {SUBSCRIPTIONS_DELIVERY}. {DELAY}\nГарантия — {GUARANTEE}.\n{VIDEO}\nВыдаёт товар только человек с ролью {SELLER_ROLE} или администрация магазина.\n{REFUND}"
+    ]
+  },
+  "texts": {
+    "tickets": "# 🛍️ Заказы {SHOP_NAME}\n\nВыберите нужное действие ниже. Заказ и получение выигрыша проходят в приватном канале, доступном только вам и сотрудникам магазина.\n\n-# Перед оплатой проверьте выбранный товар, вариант и итоговую сумму.",
+    "products": "# 📦 Каталог {SHOP_NAME}\n\nВыберите категорию, затем откройте карточку товара. В ней указаны актуальная цена, наличие, срок выдачи и условия покупки.",
+    "support": "## 💬 Поддержка\n\nОпишите вопрос — бот создаст приватный канал с сотрудниками магазина. Не отправляйте пароли, токены и коды входа.\n\n-# Чем точнее описание, тем быстрее мы сможем помочь.",
+    "reviews": "## ⭐ Отзывы покупателей\n\nПокупатели с рангом **Bronze**, **Golden** или **Diamond** могут написать отзыв обычным сообщением от своего имени. Укажите товар и расскажите, как прошла выдача.\n\n-# Сообщения без покупательского ранга автоматически удаляются.",
+    "chat": "## 💬 Общий чат\n\nОбщайтесь, знакомьтесь и уважайте друг друга. Перед отправкой сообщения ознакомьтесь с правилами: {RULES_CHANNEL}.",
+    "offtopic": "## 💣 Оффтоп и мемы\n\nЗдесь можно общаться на свободные темы. Правила магазина продолжают действовать: {RULES_CHANNEL}.",
+    "news": "## 🔔 Новости {SHOP_NAME}\n\nОбновления ассортимента, важные объявления и изменения условий магазина публикуются здесь.\n\n-# Включите уведомления канала, чтобы ничего не пропустить.",
+    "giveaways": "## 🎁 Розыгрыши {SHOP_NAME}\n\nЗдесь публикуются активные розыгрыши и их результаты. Если вы победили, откройте {TICKETS_CHANNEL}, нажмите **«Получить выигрыш»** и приложите ссылку на сообщение о победе.\n\n-# Выдача проходит в приватном тикете после проверки результата.",
+    "freebies": "## 🍪 Бесплатные предложения\n\nПодарки и временные бесплатные предложения будут появляться здесь.\n\n-# Сейчас активных предложений нет.",
+    "cases": "## 🎁 Кейсы {SHOP_NAME}\n\nСпециальные наборы и предложения магазина будут собраны в этом канале.\n\n-# Сейчас активных кейсов нет.",
+    "techLog": "## 🛡️ Технический журнал\nОшибки и события настройки. Автоматическая антикраш-защита не подключена.",
+    "giveawayLog": "## 📑 Заявки на розыгрыши\nЗаявки участников и результаты ручной проверки; это не список победителей.",
+    "freebieLog": "## 📑 Журнал халявы\nПодготовлен для будущего модуля.",
+    "joinLog": "## 📄 Вступления и выходы\nСобытия изменения состава сервера.",
+    "ticketLog": "## 📑 Тикеты\nСобытия тикетов и закрытые архивы переписки.",
+    "recruitLog": "## 📑 Набор\nПодготовлен для будущего модуля.",
+    "roleLog": "## 📄 Роли\nСоздание, назначение и изменение управляемых ролей.",
+    "messageLog": "## 📄 Сообщения\nИзменения и удаления в публичных чатах. Недоступное старое содержимое не восстанавливается.",
+    "moderator": "## 🛡️ Комната команды\n\nРабочее пространство администрации и менеджеров. Не публикуйте содержимое этого канала за пределами команды."
+  },
+  "structure": {
+    "categories": [
+      {
+        "key": "community",
+        "name": "Сообщество",
+        "access": "voice"
+      },
+      {
+        "key": "statistics",
+        "name": "СТАТИСТИКА",
+        "access": "stats"
+      },
+      {
+        "key": "read",
+        "name": "⭐ • Прочитай!",
+        "access": "readonly"
+      },
+      {
+        "key": "shop",
+        "name": "💎 • Магазинчик",
+        "access": "readonly"
+      },
+      {
+        "key": "tickets",
+        "name": "💎 • ТИКЕТЫ",
+        "access": "tickets"
+      },
+      {
+        "key": "social",
+        "name": "💬 • Общение",
+        "access": "chat"
+      },
+      {
+        "key": "rooms",
+        "name": "Комнаты",
+        "access": "voice"
+      },
+      {
+        "key": "logs",
+        "name": "📄 • ЛОГИ",
+        "access": "admin"
+      },
+      {
+        "key": "admin",
+        "name": "Админка приват сиси",
+        "access": "admin"
+      },
+      {
+        "key": "archive",
+        "name": "📁 • АРХИВ ТИКЕТОВ",
+        "access": "tickets"
+      }
+    ],
+    "channels": [
+      {
+        "key": "giveaways",
+        "name": "🎁・розыгрыши",
+        "parent": null,
+        "access": "store",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "freebies",
+        "name": "🍪・халява",
+        "parent": null,
+        "access": "store",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "invite",
+        "name": "🔊 • Магазин",
+        "parent": "community",
+        "access": "voice",
+        "type": 2,
+        "userLimit": 0
+      },
+      {
+        "key": "statsMembers",
+        "name": "☁️・Участники: —",
+        "parent": "statistics",
+        "access": "stats",
+        "type": 2,
+        "userLimit": 0
+      },
+      {
+        "key": "statsReviews",
+        "name": "☁️・Отзывы: —",
+        "parent": "statistics",
+        "access": "stats",
+        "type": 2,
+        "userLimit": 0
+      },
+      {
+        "key": "information",
+        "name": "🍗・информация",
+        "parent": "read",
+        "access": "readonly",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "news",
+        "name": "🔔・новости",
+        "parent": "read",
+        "access": "store",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "rules",
+        "name": "💥・правила",
+        "parent": "read",
+        "access": "readonly",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "reviews",
+        "name": "⭐・отзывы",
+        "parent": "read",
+        "access": "reviews",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "tickets",
+        "name": "🎀・создать-тикет",
+        "parent": "shop",
+        "access": "readonly",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "products",
+        "name": "🛒・товары",
+        "parent": "shop",
+        "access": "store",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "cases",
+        "name": "🎁・кейсы",
+        "parent": "shop",
+        "access": "store",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "chat",
+        "name": "💬・чатик",
+        "parent": "social",
+        "access": "chat",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "offtopic",
+        "name": "💣・корзина",
+        "parent": "social",
+        "access": "chat",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "room1",
+        "name": "⭐・Комната 1",
+        "parent": "rooms",
+        "access": "voice",
+        "type": 2,
+        "userLimit": 2
+      },
+      {
+        "key": "room2",
+        "name": "⭐・Комната 2",
+        "parent": "rooms",
+        "access": "voice",
+        "type": 2,
+        "userLimit": 3
+      },
+      {
+        "key": "room3",
+        "name": "⭐・Комната 3",
+        "parent": "rooms",
+        "access": "voice",
+        "type": 2,
+        "userLimit": 5
+      },
+      {
+        "key": "room4",
+        "name": "⭐・Комната 4",
+        "parent": "rooms",
+        "access": "voice",
+        "type": 2,
+        "userLimit": 6
+      },
+      {
+        "key": "room5",
+        "name": "⭐・Комната 5",
+        "parent": "rooms",
+        "access": "voice",
+        "type": 2,
+        "userLimit": 10
+      },
+      {
+        "key": "techLog",
+        "name": "🛡️・антикраш",
+        "parent": "logs",
+        "access": "technical",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "giveawayLog",
+        "name": "📑・выигрыши",
+        "parent": "logs",
+        "access": "staff",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "freebieLog",
+        "name": "📑・халява",
+        "parent": "logs",
+        "access": "staff",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "joinLog",
+        "name": "📄・join-leave",
+        "parent": "logs",
+        "access": "moderation",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "ticketLog",
+        "name": "📑・тикеты",
+        "parent": "logs",
+        "access": "staff",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "recruitLog",
+        "name": "📑・набор",
+        "parent": "logs",
+        "access": "moderation",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "roleLog",
+        "name": "📄・roles",
+        "parent": "logs",
+        "access": "technical",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "messageLog",
+        "name": "📄・message",
+        "parent": "logs",
+        "access": "moderation",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "moderator",
+        "name": "moderator-only",
+        "parent": "logs",
+        "access": "moderator",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "adminChat",
+        "name": "чатик",
+        "parent": "admin",
+        "access": "admin",
+        "type": 0,
+        "userLimit": 0
+      },
+      {
+        "key": "adminVoice",
+        "name": "войс",
+        "parent": "admin",
+        "access": "admin",
+        "type": 2,
+        "userLimit": 0
+      }
+    ]
+  }
+}
