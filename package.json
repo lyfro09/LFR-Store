@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=20 <25"
+    "node": ">=22.12 <25"
   },
   "scripts": {
     "dev": "tsx src/index.ts",
@@ -19,7 +19,7 @@
     "catalog:export": "tsx scripts/catalog.ts export"
   },
   "dependencies": {
-    "@discordjs/voice": "0.18.0",
+    "@discordjs/voice": "0.19.2",
     "better-sqlite3": "12.4.1",
     "discord.js": "14.27.0",
     "dotenv": "17.2.3",

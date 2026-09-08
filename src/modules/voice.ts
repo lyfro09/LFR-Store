@@ -16,7 +16,7 @@ export class VoiceKeeper {
  private schedule(delay=5_000) {if(this.retry)return;this.retry=setTimeout(()=>{this.retry=undefined;void this.ensure(true);},delay);}
  private async ensure(force=false) {
   if(this.pending)return this.pending;
-  this.pending=this.connect(force).catch(error=>{const message=error instanceof Error?error.message:String(error),now=Date.now();if(message!==this.lastError||now-this.lastErrorAt>10*60_000){this.lastError=message;this.lastErrorAt=now;this.report(error);}this.schedule(15_000);}).finally(()=>{this.pending=undefined;});return this.pending;
+  this.pending=this.connect(force).catch(error=>{const reported=error instanceof Error&&error.name==='AbortError'?new Error(`Голосовое подключение не готово за 30 секунд (состояние: ${this.connection?.state.status??'не создано'}). Хостинг должен разрешать исходящий и входящий UDP-трафик.`):error,message=reported instanceof Error?reported.message:String(reported),now=Date.now();if(message!==this.lastError||now-this.lastErrorAt>10*60_000){this.lastError=message;this.lastErrorAt=now;this.report(reported);}this.schedule(15_000);}).finally(()=>{this.pending=undefined;});return this.pending;
  }
  private async connect(force:boolean) {
   if(!this.guild||!this.channelId)return;
@@ -26,7 +26,7 @@ export class VoiceKeeper {
   if(!channel||channel.guildId!==this.guild.id||![ChannelType.GuildVoice,ChannelType.GuildStageVoice].includes(channel.type as ChannelType))throw new Error(`VOICE_CHANNEL_ID ${this.channelId} не является голосовым каналом этого сервера.`);
   const connection=joinVoiceChannel({guildId:this.guild.id,channelId:this.channelId,adapterCreator:this.guild.voiceAdapterCreator,selfDeaf:true,selfMute:true});this.connection=connection;
   connection.on('error',error=>this.report(error));connection.on('stateChange',(_,next)=>{if(this.connection===connection&&(next.status===VoiceConnectionStatus.Disconnected||next.status===VoiceConnectionStatus.Destroyed))this.schedule();});
-  await entersState(connection,VoiceConnectionStatus.Ready,20_000);this.lastError='';this.lastErrorAt=0;console.log(`Голосовой канал подключён: ${this.channelId}.`);
+  await entersState(connection,VoiceConnectionStatus.Ready,30_000);this.lastError='';this.lastErrorAt=0;console.log(`Голосовой канал подключён: ${this.channelId}.`);
  }
  stop() {if(this.timer)clearInterval(this.timer);if(this.retry)clearTimeout(this.retry);if(this.connection&&this.connection.state.status!==VoiceConnectionStatus.Destroyed)this.connection.destroy();}
 }
