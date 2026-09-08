@@ -3,7 +3,7 @@
   "DISCORD_URL": "https://discord.gg/lfrstore",
   "TELEGRAM_URL": "https://t.me/lyfroo",
   "PARTNERSHIP_CONTACT": "<@689455809612349463>",
-  "START_YEAR": "2021 (Mastrow Shop)",
+  "START_YEAR": "2021",
   "appearance": {
     "accent": "#793CFF",
     "banners": {
@@ -90,7 +90,7 @@
     "discord": "💬 Discord — {DISCORD_URL}.",
     "telegram": "✈️ Резервный канал в Telegram — {TELEGRAM_URL}.",
     "why": "## 💎 Почему {SHOP_NAME}\n\n✅ Низкие цены.\n✅ Быстрая выдача.\n✅ Гарантия на {GUARANTEE}.\n✅ Честные продавцы.",
-    "year": "✅ Работаем с {START_YEAR} года.",
+    "year": "✅ Работаем с {START_YEAR} года (Mastrow Shop).",
     "support": "✅ Поддержка на всех этапах покупки.",
     "thanks": "🔥 Спасибо, что выбираете **{SHOP_NAME}** — приятных покупок!"
   },
