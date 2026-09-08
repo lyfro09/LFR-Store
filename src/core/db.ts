@@ -1,11 +1,11 @@
-import { DatabaseSync, type SQLInputValue } from 'node:sqlite';
+import Database from 'better-sqlite3';
 import { mkdirSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 export class Store {
-  readonly sql: DatabaseSync;
+  readonly sql: Database.Database;
   constructor(path: string) {
     if (path !== ':memory:') mkdirSync(dirname(path), { recursive: true });
-    this.sql = new DatabaseSync(path);
+    this.sql = new Database(path);
     this.sql.exec('PRAGMA journal_mode=WAL; PRAGMA foreign_keys=ON; PRAGMA busy_timeout=5000; CREATE TABLE IF NOT EXISTS migrations (name TEXT PRIMARY KEY)');
     for (const name of readdirSync(resolve('migrations')).filter(x => x.endsWith('.sql')).sort()) {
       if (!this.get('SELECT name FROM migrations WHERE name=?', name)) this.tx(() => {
@@ -14,9 +14,9 @@ export class Store {
       });
     }
   }
-  get<T = Record<string, any>>(q: string, ...p: SQLInputValue[]): T | undefined { return this.sql.prepare(q).get(...p) as T | undefined; }
-  all<T = Record<string, any>>(q: string, ...p: SQLInputValue[]): T[] { return this.sql.prepare(q).all(...p) as T[]; }
-  run(q: string, ...p: SQLInputValue[]) { return this.sql.prepare(q).run(...p); }
+  get<T = Record<string, any>>(q: string, ...p: any[]): T | undefined { return this.sql.prepare(q).get(...p) as T | undefined; }
+  all<T = Record<string, any>>(q: string, ...p: any[]): T[] { return this.sql.prepare(q).all(...p) as T[]; }
+  run(q: string, ...p: any[]) { return this.sql.prepare(q).run(...p); }
   tx<T>(fn: () => T): T { this.sql.exec('BEGIN IMMEDIATE'); try { const r = fn(); this.sql.exec('COMMIT'); return r; } catch(e) { this.sql.exec('ROLLBACK'); throw e; } }
   value<T>(key: string, fallback: T): T { const r = this.get('SELECT value FROM settings WHERE key=?', key); return r ? JSON.parse(r.value) : fallback; }
   set(key: string, value: unknown) { this.run('INSERT INTO settings VALUES (?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value', key, JSON.stringify(value)); }

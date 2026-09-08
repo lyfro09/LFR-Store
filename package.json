@@ -4,12 +4,12 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=24 <25"
+    "node": ">=20 <25"
   },
   "scripts": {
     "dev": "tsx src/index.ts",
     "build": "tsc",
-    "start": "node dist/src/index.js",
+    "start": "tsx src/index.ts",
     "register": "tsx src/register.ts",
     "check": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
@@ -19,14 +19,16 @@
     "catalog:export": "tsx scripts/catalog.ts export"
   },
   "dependencies": {
-    "@discordjs/voice": "^0.19.2",
+    "@discordjs/voice": "0.18.0",
+    "better-sqlite3": "12.4.1",
     "discord.js": "14.27.0",
     "dotenv": "17.2.3",
+    "tsx": "4.20.6",
     "zod": "4.1.12"
   },
   "devDependencies": {
-    "@types/node": "24.10.1",
-    "tsx": "4.20.6",
+    "@types/better-sqlite3": "7.6.13",
+    "@types/node": "20.19.43",
     "typescript": "5.9.3"
   }
 }

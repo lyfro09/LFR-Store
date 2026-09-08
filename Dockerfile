@@ -1,4 +1,4 @@
-FROM node:24-bookworm-slim AS build
+FROM node:20-bookworm-slim AS build
 
 WORKDIR /app
 COPY package.json package-lock.json ./
@@ -14,7 +14,7 @@ COPY assets ./assets
 
 RUN npm run deploy:check
 
-FROM node:24-bookworm-slim AS runtime
+FROM node:20-bookworm-slim AS runtime
 
 ENV NODE_ENV=production
 ENV LOCK_PATH=/tmp/lfr-store-bot.lock
