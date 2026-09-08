@@ -24,7 +24,7 @@
     "discord.js": "14.27.0",
     "dotenv": "17.2.3",
     "tsx": "4.20.6",
-    "zod": "4.1.12"
+    "zod": "4.5.4"
   },
   "devDependencies": {
     "@types/better-sqlite3": "7.6.13",
