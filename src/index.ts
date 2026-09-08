@@ -76,7 +76,11 @@ client.once(Events.ClientReady,async()=>{
   if(db.id('channels.reviews')&&!db.value('reviews.directPermissions.v1',false)){await reviews.configure(g);db.set('reviews.directPermissions.v1',true);}
   if(db.id('categories.tickets'))for(const t of db.all('SELECT * FROM tickets WHERE state IN (\'creating\',\'open\',\'closed\')'))try{await tickets.ensure(g,Number(t.id));}catch(e){logs.error(e,'ticket-recovery');}
   if(db.id('channels.reviews'))await stats.update(g,true);
-  timer=setInterval(()=>{void worker(g);if(db.id('channels.statsMembers'))void stats.update(g);},30000);await worker(g);
+  timer=setInterval(()=>{
+   void worker(g).catch(e=>logs.error(e,'worker'));
+   if(db.id('channels.statsMembers'))void stats.update(g).catch(e=>logs.error(e,'stats'));
+  },30000);
+  await worker(g);
  }catch(e){logs.error(e,'startup');}
 });
 function shutdown(){if(stopping)return;stopping=true;if(timer)clearInterval(timer);voice.stop();client.destroy();db.close();try{unlinkSync(lockPath);}catch{}process.exit(0);}
