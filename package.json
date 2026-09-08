@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "tsx src/index.ts",
     "build": "tsc",
-    "start": "tsx src/index.ts",
+    "start": "node index.js",
     "register": "tsx src/register.ts",
     "check": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
